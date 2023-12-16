@@ -39,7 +39,7 @@ export const Main = () => {
     const navigate = useNavigate()
     
     const onStartBtnClick = () => {
-        navigate('/start')
+        navigate('/aboutUser')
     }
     return (
         <ContentContainer>
