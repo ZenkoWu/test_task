@@ -1,0 +1,5 @@
+export const USER_INFO = {
+    CHANGE_PHONE: 'CHANGE-PHONE',
+    CHANGE_EMAIL: 'CHANGE-EMAIL'
+}
+
