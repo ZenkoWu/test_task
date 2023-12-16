@@ -7,6 +7,7 @@ const reducers = combineReducers({
 })
 export type TState = {
     userInfo: {
+        nickname: string,
         name: string, 
         sername: string,
         sex?: 'man' | 'woman',
