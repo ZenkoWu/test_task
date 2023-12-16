@@ -78,7 +78,7 @@ export const Main = () => {
                                 htmlFor="field-phone"
                                 className={`${s.label} ${errors.phone && touched.phone  && s.errorLabel}`}
                             >
-                             { errors.phone && touched.phone  &&  'Введите корректный номер'  || 'Номер телефона' }
+                             { (errors.phone && touched.phone  &&  'Введите корректный номер') || 'Номер телефона' }
                             </label>
                             <Field 
                                 className={`${s.input} ${errors.phone && touched.phone && s.errorInput}`}
@@ -97,12 +97,12 @@ export const Main = () => {
                         <div className={s.inputContainer}>
                             <label
                                 htmlFor="field-email"
-                                className={`${s.label} ${errors.email && touched.email  && s.errorLabel}`}
+                                className={`${s.label} ${errors.email && touched.email && s.errorLabel}`}
                             >
-                                 { errors.email && touched.email  &&  'Введите корректный email'  || 'Email' } 
+                                 { (errors.email && touched.email  &&  'Введите корректный email' ) || 'Email' } 
                             </label>
                             <Field 
-                                className={`${s.input} ${errors.email && touched.email  && s.errorInput}`}
+                                className={`${s.input} ${errors.email && touched.email && s.errorInput}`}
                                 id='field-email'
                                 name='email'
                                 type='email'
