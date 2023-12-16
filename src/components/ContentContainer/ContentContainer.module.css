@@ -1,0 +1,31 @@
+.contentContainer {
+    padding: 20px 16vw;
+    padding-bottom: 230px;
+}
+
+.contentBackground {
+    padding: 24px;
+    background-color: white;
+    border-radius: 12px 12px 0px 0px;
+}
+
+@media (max-width: 991px) {
+    .contentContainer{
+        padding: 20px 7vw;
+        padding-bottom: 230px;
+    }
+}
+@media (max-width: 568px) {
+    .contentContainer{
+        padding: 5vw;
+    }
+}
+
+@media (max-width: 490px) {
+    .contentContainer{
+        padding: 2vw;
+    }
+    .contentBackground {
+        padding: 3vw;
+    }
+}
