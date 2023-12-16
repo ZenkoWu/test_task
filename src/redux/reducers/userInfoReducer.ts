@@ -2,6 +2,7 @@ import { USER_INFO  } from "../actionTypes";
 import { TState } from "../store";
 
 const initialState = {
+    nickname: '',
     name: '', 
     sername: '',
     advantages: [],
