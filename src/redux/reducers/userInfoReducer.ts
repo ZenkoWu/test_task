@@ -9,9 +9,8 @@ const initialState = {
     radio: 0,
     checkbox: [],
     about: '',
-    phone: JSON.parse(localStorage.getItem('phone') || 'null') || '',
-    email:  JSON.parse(localStorage.getItem('email') || 'null') || '',
-
+    phone: localStorage.getItem('phone') || '',
+    email: localStorage.getItem('email') || '',
 }
 
 export const userInfoReducer = (
@@ -25,21 +24,13 @@ export const userInfoReducer = (
     }
 ) => {
     switch(type) {
-        case USER_INFO.CHANGE_PHONE: {
-            localStorage.setItem('phone', JSON.stringify(payload))
+        case USER_INFO.CHANGE_PARAM: {
+            localStorage.setItem(payload.param, payload.value)
             return {
                 ...state,
-               phone: payload
+               [payload.param]: payload.value
             }
         }
-        case  USER_INFO.CHANGE_EMAIL: {
-            localStorage.setItem('email', JSON.stringify(payload))
-            return {
-                ...state,
-               email: payload
-            }
-        }
-
         default: return state;
     }
 } 
