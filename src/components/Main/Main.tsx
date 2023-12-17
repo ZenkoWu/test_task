@@ -3,12 +3,11 @@ import { ContentContainer } from "../ContentContainer/ContentContainer"
 import s from './Main.module.css'
 import  folder from '../../images/folder.svg'
 import { useDispatch, useSelector } from "react-redux"
-import { USER_INFO  } from "../../redux/actionTypes"
 import { ChangeEvent } from "react"
 import { addPhoneMask } from "../../utils/addPhoneMask"
 import { TState } from "../../redux/store"
 import { validateEmail, validatePhone } from "../../utils/validationFunctions"
-import { FormFields, TField } from "../Form/FormFields"
+import { FormFields, TField } from "../FormFields/FormFields"
 import { userInfoParams } from "../../constants"
 import { userInfo } from "../../redux/actionCreators"
 
@@ -25,7 +24,7 @@ export const Main = () => {
     const onEmailChange = (value: string) => {
         dispatch(userInfo.changeParam({param: userInfoParams.email, value}))
     }
-    const onPhoneChange = (value: EventTarget) => {
+    const onPhoneChange = (value: HTMLInputElement) => {
         const payload = addPhoneMask(value)
         dispatch(userInfo.changeParam({param: userInfoParams.phone, value: payload}))
     }
