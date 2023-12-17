@@ -1,10 +1,9 @@
-export const addPhoneMask = (phoneInput: any) => { //e.target
+export const addPhoneMask = (phoneInput: HTMLInputElement):string => { //e.target
 
-    const getInputNumbersValue = (input: any) => {
+    const getInputNumbersValue = (input: HTMLInputElement) => {
         // Return stripped input value — just numbers
         return input.value.replace(/\D/g, '');
     }
-
 
     const onPhoneInput = function (phoneInput: any) {
             let inputNumbersValue = getInputNumbersValue(phoneInput)
@@ -20,7 +19,7 @@ export const addPhoneMask = (phoneInput: any) => { //e.target
                 // Attempt to input non-numeric symbol
                 phoneInput.value = inputNumbersValue;
             }
-            return '';
+            return phoneInput.value;
         }
 
         if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
