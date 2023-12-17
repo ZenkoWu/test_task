@@ -20,7 +20,7 @@ export const addPhoneMask = (phoneInput: any) => { //e.target
                 // Attempt to input non-numeric symbol
                 phoneInput.value = inputNumbersValue;
             }
-            return;
+            return '';
         }
 
         if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
