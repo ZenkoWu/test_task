@@ -19,7 +19,11 @@
     width: 45%;
     outline: none;
 }
-
+.tip {
+    font-size: 14px;
+    padding-left: 5px;
+    color: rgb(131, 127, 127);
+}
 .errorInput {
     border: 1px solid red;
 }
@@ -53,6 +57,8 @@
 .nextBtn:disabled,  .backBtn:disabled{ 
     background-color: rgba(128, 128, 128, 0.521);
     cursor: default;
+    border: none;
+    color: white;
 }
 
 @media (max-width: 991px) {

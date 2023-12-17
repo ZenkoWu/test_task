@@ -21,7 +21,7 @@ type TFormFields = {
     initialValues: TState['userInfo'],
     onSubmit: (values: any) => void,
     fields: TField[],
-    OnBackBtnClick?: ()=> {},
+    OnBackBtnClick?: ()=> void,
     OnNextBtnClick?: () => void,
     backBtnTitle?: string,
     nextBtnTitle?: string
@@ -120,7 +120,7 @@ export const FormFields = ({
                                     el.tip && 
                                     <p className={s.tip}>
                                         { 
-                                            (errors[el.name] && touched[el.name]  &&  el.tip) ||  'Tip' 
+                                            (errors[el.name] && touched[el.name]  &&  el.tip) || 'Tip' 
                                         }
                                     </p>
                                 }
@@ -132,7 +132,7 @@ export const FormFields = ({
                             OnBackBtnClick &&
                             <button
                                 id="button-back"
-                                disabled={Object.keys(errors).length > 0 ? true : false}
+                                disabled={Object.keys(errors).length > 0}
                                 className={s.backBtn}
                                 type="submit"
                                 onClick={OnBackBtnClick}
@@ -145,7 +145,7 @@ export const FormFields = ({
                             OnNextBtnClick && 
                             <button
                                 id="button-next"
-                                disabled={Object.keys(errors).length > 0 ? true : false}
+                                disabled={Object.keys(errors).length > 0}
                                 className={s.nextBtn}
                                 type="submit"
                                 onClick={OnNextBtnClick}
