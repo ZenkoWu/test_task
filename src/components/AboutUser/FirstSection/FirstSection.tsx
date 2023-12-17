@@ -3,7 +3,7 @@ import { TState } from "../../../redux/store"
 import { ChangeEvent } from "react"
 import { USER_INFO } from "../../../redux/actionTypes"
 import { useNavigate } from "react-router-dom"
-import { FormFields, TField } from "../../Form/FormFields"
+import { FormFields, TField } from "../../FormFields/FormFields"
 import { validateName, validateNickname } from "../../../utils/validationFunctions"
 import { userInfoParams } from "../../../constants"
 
@@ -60,14 +60,7 @@ export const FirstSection = ({OnNextBtnClick}: {OnNextBtnClick: ()=> void}) => {
             value: sex,
             onChange: (e: ChangeEvent<any>) => 
                 onChange(userInfoParams.sex, e.target.value),
-            options: [
-                {
-                    option: 'man'
-                },
-                {
-                    option: 'woman'
-                },
-            ]
+            options: [ 'man', 'woman']
         },
     ];
 
@@ -85,6 +78,7 @@ export const FirstSection = ({OnNextBtnClick}: {OnNextBtnClick: ()=> void}) => {
             backBtnTitle="Назад"
             OnNextBtnClick={OnNextBtnClick}
             nextBtnTitle="Далее"
+            btnNextId='button-next'
         />
     )
 }
