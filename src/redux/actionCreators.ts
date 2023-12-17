@@ -1,6 +1,10 @@
+import { userInfoParams } from "../constants";
 import { USER_INFO } from "./actionTypes";
 
-export const form = {
-    changePhone:  (payload: string) => ({type: USER_INFO.CHANGE_PHONE, payload}),
+export const userInfo = {
+    changeParam: (payload: {
+        param: keyof typeof userInfoParams, 
+        value: string
+    }) => ({type: USER_INFO.CHANGE_PARAM, payload}),
 }
 
