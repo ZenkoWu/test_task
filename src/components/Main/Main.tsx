@@ -10,6 +10,7 @@ import { TState } from "../../redux/store"
 import { validateEmail, validatePhone } from "../../utils/validationFunctions"
 import { FormFields, TField } from "../Form/FormFields"
 import { userInfoParams } from "../../constants"
+import { userInfo } from "../../redux/actionCreators"
 
 const links = [
     {title: 'Telegram', link: '#'},
@@ -22,11 +23,11 @@ export const Main = () => {
     const dispatch = useDispatch()
 
     const onEmailChange = (value: string) => {
-        dispatch({type: USER_INFO.CHANGE_PARAM, payload: {param: userInfoParams.email, value}})
+        dispatch(userInfo.changeParam({param: userInfoParams.email, value}))
     }
     const onPhoneChange = (value: EventTarget) => {
         const payload = addPhoneMask(value)
-        dispatch({type: USER_INFO.CHANGE_PARAM, payload: {param: userInfoParams.phone, value: payload}})
+        dispatch(userInfo.changeParam({param: userInfoParams.phone, value: payload}))
     }
     
     const navigate = useNavigate()
