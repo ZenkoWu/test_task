@@ -1,0 +1,53 @@
+.container {
+    padding: 40px 70px;
+}
+.sectionBar {
+    position: relative; 
+    width: 50%; 
+    height: 8px; 
+    border-radius: 10px;
+}
+
+.fulfilledBg {
+    background-color:  #5558fa;
+}
+.defaultBg {
+    background-color: #ebebeb;
+}
+
+.sectionBtn {
+    position: absolute; 
+    width: 15px; 
+    height: 15px; 
+    border-radius: 50%; 
+    top: -4px;
+    z-index: 5;
+}
+.sectionBtn_first {
+    left: 0; 
+}
+
+.sectionBtn_second {
+    right: -6px;
+}
+
+.sectionBtn_third {
+    right: 0;
+}
+
+.sectionNumbers {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 15px;
+}
+.fwBold {
+    font-weight: bold;
+}
+
+.sectionNumber {
+    color: #5558fa;
+}
+
+.marginTop {
+    margin-top: 50px;
+}
