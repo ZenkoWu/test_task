@@ -84,6 +84,7 @@ export const Main = () => {
                 fields={fields}
                 OnNextBtnClick={onStartBtnClick}
                 nextBtnTitle="Начать"
+                btnNextId='button-start'
             />
         </ContentContainer>
     )
