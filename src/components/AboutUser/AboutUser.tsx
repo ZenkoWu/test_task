@@ -20,7 +20,7 @@ export const AboutUser = () => {
                     <div className="d-flex"> 
                         <div className={`
                             ${s.sectionBar} 
-                            ${section > 1 ? s.fulfilledBg : s.default}`
+                            ${section > 1 ? s.fulfilledBg : s.defaultBg}`
                         }>
                             <input 
                                 checked={section === 1} 
@@ -38,7 +38,7 @@ export const AboutUser = () => {
                         </div>
                         <div className={` 
                             ${s.sectionBar} 
-                            ${section === 3 ? s.fulfilledBg : s.default}
+                            ${section === 3 ? s.fulfilledBg : s.defaultBg}
                         `}>
                             <input 
                                 checked={section === 3} 
