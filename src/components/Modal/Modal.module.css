@@ -54,6 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   flex-direction: column;
 }
 .title {
@@ -93,4 +94,11 @@
 }
 
 
-
+@media(max-width: 576px) {
+  .modal {
+    padding: 20px 40px;
+  }
+  .title {
+    font-size: 20px;
+  }
+}
