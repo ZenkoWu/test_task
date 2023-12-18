@@ -7,16 +7,16 @@ const reducers = combineReducers({
 })
 export type TState = {
     userInfo: {
-        nickname?: string,
-        name?: string, 
-        sername?: string,
-        sex?: 'man' | 'woman',
-        phone?: string,
-        email?: string,
+        nickname: string,
+        name: string, 
+        sername: string,
+        sex: 'man' | 'woman',
+        phone: string,
+        email: string,
         advantages: {id: number, advantage: string}[],
         radio: {id: number, checked: boolean}[],
         checkbox: {id: number, checked: boolean}[],
-        about?: string
+        about: string
     }
 }
 const middleware = applyMiddleware(thunk);

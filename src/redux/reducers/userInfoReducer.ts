@@ -10,6 +10,7 @@ const initialState = {
         {id: 1, advantage: ''},
         {id: 2, advantage: ''},
     ],
+    sex: 'man' as const,
     radio:  [
         {id: 1, checked: false},
         {id: 2, checked: false},

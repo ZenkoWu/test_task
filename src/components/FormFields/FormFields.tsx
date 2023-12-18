@@ -36,7 +36,7 @@ export type TField = {
 }
 
 type TFormFields = {
-    initialValues: TState['userInfo'],
+    initialValues: Partial<TState['userInfo']>,
     onSubmit: (values: any) => void,
     fields: TField[],
     OnBackBtnClick?: ()=> void,
