@@ -124,13 +124,14 @@ export const FormFields = ({
                                                             placeholder={el.placeholder || 'Placeholder'}
                                                             validate={el.validate}
                                                             type={el.type}
-                                                            id={`field-${el.name}`}
+                                                            id={`field-${el.name}-${subEl.id}`}
                                                             value={subEl.advantage}
                                                             onChange={(e:any)=> 
                                                                 el.fieldGroup?.onChange(subEl.id, e.target.value)
                                                             }
                                                         />
                                                         <div 
+                                                            id={`field-button-remove-${subEl.id}`}
                                                             onClick={()=> el.fieldGroup?.onDelete(subEl.id)}
                                                             className={s.basketBtn}  
                                                         >
@@ -145,6 +146,7 @@ export const FormFields = ({
                                             <button 
                                                 className={s.addBtn} 
                                                 onClick={()=> el.fieldGroup?.onAdd()}
+                                                id="button-add"
                                             >
                                                 +
                                             </button>
@@ -164,7 +166,7 @@ export const FormFields = ({
                                                                 placeholder={el.placeholder || 'Placeholder'}
                                                                 validate={el.validate}
                                                                 type={el.type}
-                                                                id={`field-${el.name}`}
+                                                                id={`field-${el.name}-group-option-${subEl.id}`}
                                                                 value={subEl.id}
                                                                 checked={subEl.checked}
                                                                 onChange={()=> el.checkGroup?.onChange(subEl.id)}
