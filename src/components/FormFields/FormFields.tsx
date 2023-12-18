@@ -56,6 +56,19 @@ export const FormFields = ({
     nextBtnTitle,
     btnNextId
 }: TFormFields) => {
+
+    const checkAllFieldsFull = (initialValues: Partial<TState['userInfo']>) => {
+        let isFulfilled = true
+        const keys = Object.keys(initialValues) as (keyof TState['userInfo'])[]
+
+        for(const key of keys) {
+            if(!initialValues[key]) {
+                isFulfilled = false;
+                break;
+            }
+        }
+        return isFulfilled;
+    }
     return (
         <Formik
             initialValues={initialValues}
@@ -219,7 +232,12 @@ export const FormFields = ({
                                 disabled={Object.keys(errors).length > 0}
                                 className={s.nextBtn}
                                 type="submit"
-                                onClick={OnNextBtnClick}
+                                onClick={()=> {
+                                    const isFulfilled = checkAllFieldsFull(initialValues)
+                                    if(isFulfilled) {
+                                        OnNextBtnClick()
+                                    }
+                                }}
                             >
                                 {nextBtnTitle}
                             </button>
