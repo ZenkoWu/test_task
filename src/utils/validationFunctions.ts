@@ -15,3 +15,7 @@ export const validateName = (value?: string) => {
     const regular = /^[a-zA-Zа-яА-Я]+$/
     return !value || !regular.test(value)
 }
+
+export const validateAbout = (value?: string) => {
+    return !value || value.length < 20;
+}
