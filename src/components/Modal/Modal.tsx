@@ -25,8 +25,8 @@ export const Modal = ({
 
     return (
         <div 
-            className={`${s.wrapper_modal}`} 
-            onClick={onRejection}
+            className={`${s.wrapper_modal} ${isError && s.pointer}`} 
+            onClick={(e:any)=> isError && onRejection(e)}
         >
             {
                 isError ? 
