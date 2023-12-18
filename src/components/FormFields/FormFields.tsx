@@ -9,20 +9,30 @@ type TFieldType = 'text' | 'textarea' | 'select'| 'tel' | 'email' | 'checkbox' |
 export type TField = {
     name: keyof TState['userInfo'],
     label: string,
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void,
     type: TFieldType,
-    value: any,
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void,
+    value?: string,
     errorLabel?: string,
     validate?: () => void,
     tip?: string,
     options?: string[],
     placeholder?: string,
     fieldGroup?: {
+        group: { 
+            id: number;
+            advantage: string
+        }[],
         onDelete: (id: number)=> void,
         onAdd: ()=> void,
         onChange: (id: number, value: string) => void
     },
-    onCheck?: (id: number, e?:any) => void
+    checkGroup?: {
+        group: {
+            id: number,
+            checked: boolean
+        }[],
+        onChange: (id: number) => void
+    }
 }
 
 type TFormFields = {
@@ -90,7 +100,7 @@ export const FormFields = ({
                                         el.fieldGroup ?  
                                        <>
                                             { 
-                                                el.value.map((subEl: any) => (
+                                                el.fieldGroup.group.map((subEl) => (
                                                     <div className={s.fieldsContainer}>
                                                         <Field
                                                             className={`
@@ -128,10 +138,10 @@ export const FormFields = ({
                                         </>
                                       
                                     :
-                                        el.type === 'checkbox' || el.type === 'radio' ? 
+                                        el.checkGroup ? 
                                         <>
                                            { 
-                                                el.value.map((subEl: any) => (
+                                                el.checkGroup.group.map((subEl) => (
                                                     <div className={s.fieldsContainer}>
                                                         <label>
                                                             {subEl.id}
@@ -144,7 +154,7 @@ export const FormFields = ({
                                                                 id={`field-${el.name}`}
                                                                 value={subEl.id}
                                                                 checked={subEl.checked}
-                                                                onChange={()=> el.onCheck?.(subEl.id)}
+                                                                onChange={()=> el.checkGroup?.onChange(subEl.id)}
                                                             />
                                                         </label>
                                                     </div>
@@ -169,6 +179,7 @@ export const FormFields = ({
                                             />
                                             {
                                                 el.type === 'textarea' && 
+                                                el.value && 
                                                 el.value?.length > 0 && 
                                                 <p className={s.counter}>
                                                     {el.value.length}/200

@@ -40,7 +40,7 @@ export const SecondSection = ({
         })
     }
 
-    const onCheckBtnClick = ( id: number) => {
+    const onCheckboxBtnClick = ( id: number) => {
         dispatch({
             type: USER_INFO.CHECK_CHANGE, 
             payload: id
@@ -58,11 +58,11 @@ export const SecondSection = ({
             name: 'advantages',
             label: 'Преимущества',
             type: 'text',
-            value: advantages,
             fieldGroup: {
+                group: advantages,
                 onDelete: onBasketClick,
                 onAdd: onAdvantageAdd,
-                onChange: onAdvantageChange
+                onChange: onAdvantageChange,
             },
 
         },
@@ -70,19 +70,19 @@ export const SecondSection = ({
             name: 'checkbox',
             label: 'Checkbox группа',
             type: 'checkbox',
-            value: checkbox,
-            onChange: (e: ChangeEvent<HTMLInputElement>) => 
-                onChange(userInfoParams.name, e.target.value),
-            onCheck: onCheckBtnClick
+            checkGroup: {
+                group: checkbox,
+                onChange: onCheckboxBtnClick
+            }
         },
         {
             name: 'radio',
             label: 'Radio группа',
             type: 'radio',
-            value: radio,
-            onChange: (e: ChangeEvent<HTMLInputElement>) =>
-                onChange(userInfoParams.sername, e.target.value),
-            onCheck: onRadioBtnClick
+            checkGroup: {
+                group: radio,
+                onChange: onRadioBtnClick
+            }
         },
     ];
 
