@@ -13,16 +13,46 @@
     display: block;
     border-radius: 4px;
     border: 1px solid #cecece;
-    background-color: #f5f5f5;
+    background-color: transparent;
     color: #0a0a0a;
-    padding: 10px;
+    padding: 12px;
     width: 45%;
     outline: none;
+}
+.checkbox {
+    display: block;
+    border: 1px solid rgb(180, 176, 176);
+    width: 20px;
+    border-radius: 3px;
 }
 .tip {
     font-size: 14px;
     padding-left: 5px;
     color: rgb(131, 127, 127);
+}
+.addBtn {
+    border: 2px solid rgb(58, 58, 236);
+    border-radius: 3px;
+    color: rgb(58, 58, 236);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px;
+    background-color: transparent;
+    cursor: pointer;
+    max-width: 45px;
+    text-align: center;
+}
+.fieldsContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.basketBtn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; 
+    cursor: pointer;  
 }
 .errorInput {
     border: 1px solid red;
@@ -34,6 +64,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+.marginLeft_10 {
+    margin-left: 10px;
+}
 .backBtn {
     color: #5558FA;
     background-color: transparent;
@@ -42,6 +76,21 @@
     border-radius: 4px;
     margin-top: 50px;
     cursor: pointer;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 20vh;
+    padding: 10px;
+    outline: none;
+    border: 2px solid rgb(209, 208, 208);
+    border-radius: 5px;
+}
+.counter {
+    width: 50%;
+    margin-left: auto;
+    text-align: end;
+    color: grey;
 }
 
 .nextBtn {
