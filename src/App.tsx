@@ -6,7 +6,7 @@ import { AboutUser } from "./components/AboutUser/AboutUser"
 export const App = () => {
 	return (
 		<BrowserRouter> 
-			<div className='content'>
+			<div className='content' id='content'>
 				<Routes>
                     <Route path='/' element={<Main/>}/>
 					<Route path='/aboutUser' element={<AboutUser/>}/>
