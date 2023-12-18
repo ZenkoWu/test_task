@@ -13,9 +13,9 @@ export type TState = {
         sex?: 'man' | 'woman',
         phone?: string,
         email?: string,
-        advantages?: string[],
-        radio?: number,
-        checkbox?: number[],
+        advantages?: {id: number, advantage: string}[],
+        radio?: {id: number, checked: boolean}[],
+        checkbox?:   {id: number, checked: boolean}[],
         about?: string
     }
 }
