@@ -4,5 +4,8 @@ export const userInfoParams = {
     name: 'name',
     sername: 'sername',
     nickname: 'nickname',
-    sex: 'sex'
+    sex: 'sex',
+    about: 'about',
+    checkbox: 'checkbox',
+    radio:'radio'
 } as const;
